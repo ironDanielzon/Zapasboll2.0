@@ -1,0 +1,137 @@
+.uno {
+    position: relative;
+    background-color: black;
+    height: 75vh;
+    min-height: 25rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+.uno video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.uno .container {
+    position: relative;
+    z-index: 2;
+}
+
+.uno .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+/* Media Query for devices withi coarse pointers and no hover functionality */
+
+/* This will use a fallback image instead of a video for devices that commonly do not support the HTML5 video element */
+
+@media (pointer: coarse) and (hover: none) {
+    .uno {
+        background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
+    }
+
+    .uno video {
+        display: none;
+    }
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.product-list {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.product {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+}
+
+.cart {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.cart h2 {
+    margin-bottom: 10px;
+}
+
+.cart-list {
+    list-style: none;
+    padding: 0;
+}
+
+.cart-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    border-bottom: 1px solid #eee;
+}
+
+.total {
+    font-weight: bold;
+    margin-top: 10px;
+}
+.add-to-cart-btn {
+    border: 2px solid #3498db; /* Color del borde */
+    background-color: #3498db; /* Color de fondo */
+    color: #fff; /* Color del texto */
+    padding: 8px 16px; /* Ajusta el relleno según sea necesario */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transición en el cambio de color de fondo */
+    border-radius: 5px; /* Especifica el radio de las esquinas */
+
+    /* Otras propiedades de estilo si las necesitas */
+}
+
+.add-to-cart-btn:hover {
+    background-color: #2980b9; /* Cambia el color de fondo en el hover */
+}
+
+
+.remove-from-cart-btn{
+    border: 2px solid #3498db; /* Color del borde */
+    background-color: #3498db; /* Color de fondo */
+    color: #fff; /* Color del texto */
+    padding: 8px 16px; /* Ajusta el relleno según sea necesario */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transición en el cambio de color de fondo */
+    border-radius: 5px; /* Especifica el radio de las esquinas */
+}
+.remove-from-cart-btn:hover {
+    background-color: #2980b9; /* Cambia el color de fondo en el hover */
+}

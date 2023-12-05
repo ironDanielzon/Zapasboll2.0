@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ZapasBoll</title>
+
+    <!-- Font Awesome -->
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <!-- Google Fonts Roboto -->
+    <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+    />
+    <!-- MDB -->
+    <script src="js/EventoTecla.js"></script>
+    <link rel="stylesheet" href="css/mdb.min.css"/>
+    <link rel="stylesheet" href="css/hola.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+</head>
+<body>
+
+
+<!--Main Navigation-->
+<header>
+    <!-- Navbar -->
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-secondary">
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+            <!-- Navbar brand -->
+            <a class="navbar-brand" href="Index.html">ZapasBoll</a>
+
+            <!-- Toggle button -->
+            <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-mdb-toggle="collapse"
+                    data-mdb-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+            >
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Collapsible wrapper -->
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <!-- Link -->
+                <li class="nav-item"><a class="nav-link" href="Index.html">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="Contacto.html">Contacto</a></li>
+                <li class="nav-item"><a class="nav-link" href="SobreNosotros.html">Acerca De</a></li>
+            </ul>
+
+            <!-- Icons -->
+            <ul class="navbar-nav d-flex flex-row me-1">
+                <li class="nav-item me-3 me-lg-0">
+                    <a class="nav-link" data-toggle="modal" data-target=".bd-example-modal-lg"><i
+                            class="fas fa-shopping-cart"></i></a>
+                </li>
+
+                <button id="registrar" type="button" class="btn btn-secondary" data-toggle="modal"
+                        data-target="#exampleModal" data-whatever="@mdo">Registrarse
+                </button>
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                     aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3 class="text-center mb-4">Iniciar Sesión</h3>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="login-wrap p-4 p-md-5">
+                                    <div class="icon d-flex align-items-center justify-content-center">
+                                        <span class="fa fa-user-o"></span>
+                                    </div>
+                                    <form action="#" class="login-form">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control rounded-left"
+                                                   placeholder="Nombre de Usuario" required>
+                                        </div>
+                                        <div class="form-group d-flex">
+                                            <input type="password" class="form-control rounded-left"
+                                                   placeholder="Contraseña" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <a type="submit"
+                                                    href="AgregarProducto.html" class="form-control btn btn-primary rounded submit px-3">Iniciar
+                                                Sesión
+                                            </a>
+                                        </div>
+                                        <div class="form-group d-md-flex">
+                                            <div class="w-50">
+                                                <label class="checkbox-wrap checkbox-primary">Recuérdame
+                                                    <input type="checkbox" checked>
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                            </div>
+                                            <div class="w-50 text-md-right">
+                                                <a href="#">¿Olvidaste tu Contraseña?</a>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
+                     aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2>Carrito</h2>
+                            </div>
+                            <div class="modal-body">
+                                <div class="cart">
+
+                                    <ul class="cart-list"></ul>
+                                    <p class="total">Total: Bs <span id="cart-total">0.00</span></p>
+                                    <button id="comprar">Comprar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ul>
+
+
+        </div>
+        </div>
+        <!-- Container wrapper -->
+    </nav>
+    <!-- Navbar -->
+
+    <header class="uno">
+
+        <!-- This div is  intentionally blank. It creates the transparent black overlay over the video which you can modify in the CSS -->
+        <div class="overlay"></div>
+
+        <!-- The HTML5 video element that will create the background video on the header -->
+        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+            <source src="img/Bad%20Bunny%20x%20adidas%20Originals,%20Baby%20Blue%20Forum.mp4" type="video/mp4">
+        </video>
+
+        <!-- The header content -->
+        <div class="container h-100">
+            <div class="d-flex h-100 text-center align-items-center">
+                <div class="w-100 text-white">
+                    <h1 class="display-3" id="titulo" style="font-size: 100px">ZapasBoll</h1>
+                    <p class="lead mb-0" id="subtitulo">Shoes</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+</header>
+
+
+<!-- Products -->
+<section>
+    <div class="container my-5">
+        <header class="mb-4">
+            <h3 >Adidas</h3>
+        </header>
+
+        <div class="row">
+            <div class="product-list">
+                <div class="product" data-id="1">
+                    <img src="https://www.runningxpert.com/media/catalog/product/g/y/gy9351_1_footwear_photography_side_lateral_center_view_white.jpg"
+                         class="card-img-top rounded-2" style=" height: 300px; width: 300px">
+                    <p>Adidas Ultraboost 22</p>
+                    <p class="description">El último calzado de running de Adidas con tecnología de vanguardia.</p>
+                    <p class="price">$120.00</p>
+                    <button class="add-to-cart-btn">Agregar al carrito</button>
+                </div>
+
+                <div class="product" data-id="2">
+                    <img src="https://assets.adidas.com/images/w_600,f_auto,q_auto/cd16ddc733aa4a378408afd200db5ecb_9366/Zapatillas_Solarboost_5_Naranjo_GV9137_01_standard.jpg"
+                         class="card-img-top rounded-2" style="aspect-ratio: 1 / 1; height: 300px; width: 250px">
+                    <p>Adidas Solarboost</p>
+                    <p class="description">Un calzado de running de alto rendimiento diseñado para comodidad y velocidad.</p>
+                    <p class="price">$90.00</p>
+                    <button class="add-to-cart-btn">Agregar al carrito</button>
+                </div>
+
+                <div class="product" data-id="3">
+                    <img src="https://assets.adidas.com/images/w_600,f_auto,q_auto/386021d6066f4a8dade9af8f0087f673_9366/Zapatilla_Adizero_Adios_Pro_3.0_Blanco_HQ3688_01_standard.jpg"
+                         class="card-img-top rounded-2" style="height: 300px; width: 250px">
+                    <p>Adidas Adizero Adios Pro</p>
+                    <p class="description">Construido para corredores profesionales, este calzado ofrece un soporte óptimo y retorno de energía.</p>
+                    <p class="price">$150.00</p>
+                    <button class="add-to-cart-btn">Agregar al carrito</button>
+                </div>
+
+                <div class="product" data-id="4">
+                    <img src="https://assets.adidas.com/images/w_600,f_auto,q_auto/82d13615bb3f4074b689ab97012d9b59_9366/Zapatillas_Pulseboost_HD_Negro_EG9970_01_standard.jpg"
+                         class="card-img-top rounded-2" style="height: 300px; width: 250px">
+                    <p>Adidas Pulseboost HD</p>
+                    <p class="description">Mejora tu carrera urbana con este elegante y cómodo calzado de running de Adidas.</p>
+                    <p class="price">$110.00</p>
+                    <button class="add-to-cart-btn">Agregar al carrito</button>
+                </div>
+
+
+
+            </div>
+
+            <header class="mb-4">
+                <h3 >Nike</h3>
+            </header>
+
+            <div class="product-list">
+                <div class="product" data-id="5">
+                    <img src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/84f9d628-19dc-4749-8d37-59dc734fdbcd/air-max-90-g-zapatillas-de-golf-l6V5wP.png"
+                         class="card-img-top rounded-2" style="aspect-ratio: 1 / 1; height: 300px; width: 250px">
+                    <p>Nike Air Max 90</p>
+                    <p class="description">Un clásico atemporal, las Nike Air Max 90 ofrecen estilo y comodidad inigualables.</p>
+                    <p class="price">$110.00</p>
+                    <button class="add-to-cart-btn">Agregar al carrito</button>
+                </div>
+
+                <div class="product" data-id="6">
+                    <img src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/9270423b-bca1-4cde-a2b9-4ec9e4f8e74a/calzado-de-running-en-carretera-react-infinity-3-X4PKW0.png"
+                         class="card-img-top rounded-2" style="aspect-ratio: 1 / 1; height: 300px; width: 250px">
+                    <p>Nike React Infinity Run Flyknit</p>
+                    <p class="description">Diseñadas para una amortiguación superior y una sensación de suavidad en cada paso.</p>
+                    <p class="price">$130.00</p>
+                    <button class="add-to-cart-btn">Agregar al carrito</button>
+                </div>
+
+                <div class="product" data-id="7">
+                    <img src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/tuyghkjgvuzls3oehlzv/calzado-de-running-zoom-pegasus-turbo-2-GcDSX3.png"
+                         class="card-img-top rounded-2" style="height: 300px; width: 250px">
+                    <p>Nike Zoom Pegasus Turbo 2</p>
+                    <p class="description">Zapatillas de running rápidas y ligeras con una respuesta de alto rendimiento.</p>
+                    <p class="price">$150.00</p>
+                    <button class="add-to-cart-btn">Agregar al carrito</button>
+                </div>
+
+                <div class="product" data-id="8">
+                    <img src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/b7d9211c-26e7-431a-ac24-b0540fb3c00f/calzado-air-force-1-07-jBrhbr.png"
+                         class="card-img-top rounded-2" style="height: 300px; width: 250px">
+                    <p>Nike Air Force 1</p>
+                    <p class="description">Un clásico de la moda urbana, las Nike Air Force 1 son símbolo de estilo y versatilidad.</p>
+                    <p class="price">$100.00</p>
+                    <button class="add-to-cart-btn">Agregar al carrito</button>
+                </div>
+
+            </div>
+
+            <header class="mb-4">
+                <h3 >Puma</h3>
+            </header>
+
+            <div class="product-list">
+                <div class="product" data-id="9">
+                    <img src="https://img01.ztat.net/article/spp-media-p1/4f15a6e58163435da9d6e186aee36bd6/a4cab5a9455f48dfb7b619d3376675ea.jpg?imwidth=1800&filter=packshot"
+                         class="card-img-top rounded-2" style="aspect-ratio: 1 / 1; height: 300px; width: 250px">
+                    <p>Puma RS-X</p>
+                    <p class="description">Las Puma RS-X combinan estilo retro con tecnología moderna para un rendimiento excepcional.</p>
+                    <p class="price">$80.00</p>
+                    <button class="add-to-cart-btn">Agregar al carrito</button>
+                </div>
+
+                <div class="product" data-id="10">
+                    <img src="https://img01.ztat.net/article/spp-media-p1/216cc1b39a994f35a48c7c78112b4850/64263965282c4443b78882cde0b23e53.jpg?imwidth=1800&filter=packshot"
+                         class="card-img-top rounded-2" style="aspect-ratio: 1 / 1; height: 300px; width: 250px">
+                    <p>Puma Future Rider</p>
+                    <p class="description">Inspiradas en el estilo de los años 80, las Puma Future Rider ofrecen comodidad y moda.</p>
+                    <p class="price">$90.00</p>
+                    <button class="add-to-cart-btn">Agregar al carrito</button>
+                </div>
+
+                <div class="product" data-id="11">
+                    <img src="https://www.tradeinn.com/f/13735/137358614/puma-clyde-court-gw-basketball-shoes.jpg"
+                         class="card-img-top rounded-2" style="height: 300px; width: 250px">
+                    <p>Puma Clyde Court</p>
+                    <p class="description">Zapatillas de baloncesto elegantes y modernas con el toque clásico de Puma.</p>
+                    <p class="price">$110.00</p>
+                    <button class="add-to-cart-btn">Agregar al carrito</button>
+                </div>
+
+                <div class="product" data-id="12">
+                    <img src="https://dpjye2wk9gi5z.cloudfront.net/wcsstore/ExtendedSitesCatalogAssetStore/images/catalog/zoom/1028734-0100V1.jpg"
+                         class="card-img-top rounded-2" style="height: 300px; width: 250px">
+                    <p>Puma Cali</p>
+                    <p class="description">Un clásico estilo urbano, las Puma Cali son versátiles y llenas de estilo.</p>
+                    <p class="price">$75.00</p>
+                    <button class="add-to-cart-btn">Agregar al carrito</button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- Products -->
+
+<!-- Features -->
+<section>
+    <div class="container" >
+        <div class="card p-4 bg-secondary">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h4 class="mb-0 text-white">Las mejores ofertas y marcas</h4>
+                    <p class="mb-0 text-white-50">Ofertas</p>
+                </div>
+           </div>
+        </div>
+    </div>
+</section>
+<!-- Features -->
+
+<!-- Recommended -->
+<section>
+    <div class="container my-5">
+        <header class="mb-4">
+            <h3 id="recomendados">Rebajas</h3>
+        </header>
+
+        <div class="row">
+            <div class="product-list">
+                <div class="product" data-id="13">
+                    <img src="https://www.converse.com/dw/image/v2/BJJF_PRD/on/demandware.static/-/Sites-cnv-master-catalog-we/default/dw83ac5808/images/a_107/M9160_A_107X1.jpg?sw=964"
+                         class="card-img-top rounded-2" style="aspect-ratio: 1 / 1; height: 300px; width: 250px">
+                    <p>Converse Chuck Taylor All Star</p>
+                    <p class="description">Las clásicas Chuck Taylor All Star, un símbolo de estilo atemporal y versatilidad.</p>
+                    <p class="price">$55.00</p>
+                    <button class="add-to-cart-btn">Agregar al carrito</button>
+                </div>
+
+                <div class="product" data-id="14">
+                    <img src="https://www.converse.com/dw/image/v2/BJJF_PRD/on/demandware.static/-/Sites-cnv-master-catalog-we/default/dw7eb5f690/images/d_08/164056C_D_08X1.jpg?sw=406"
+                         class="card-img-top rounded-2" style="aspect-ratio: 1 / 1; height: 300px; width: 250px">
+                    <p>Converse Jack Purcell</p>
+                    <p class="description">Un diseño elegante y clásico, las Converse Jack Purcell ofrecen comodidad y estilo.</p>
+                    <p class="price">$65.00</p>
+                    <button class="add-to-cart-btn">Agregar al carrito</button>
+                </div>
+
+                <div class="product" data-id="15">
+                    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgREBUQExMSEBUSEA8QEBYXFxcXFxYVGBUWFhUTGBgYHiggGhslGxUVLTEhJSkrLy4wFx8zODMsNygtLisBCgoKDg0OGg8QGi0fHSUrMCsrLi8tKy0vLS0tKy0tKy0rLS0tLS0tLS0uLS0tLS0tLS0tLTctLS0tLS0rLS0tLv/AABEIAPUAzQMBIgACEQEDEQH/xAAcAAEAAgMBAQEAAAAAAAAAAAAABQYDBAcCAQj/xABFEAACAQMBBQIJCAYKAwAAAAAAAQIDBBEhBQYSMUETUQciMmFxgZGx0RRCUnKSocHSU2KTosLwFiQzQ0RUgoOEwyPi8f/EABkBAQADAQEAAAAAAAAAAAAAAAABAgMFBP/EACARAQADAAICAgMAAAAAAAAAAAABAhEDMRJBIVEEMnH/2gAMAwEAAhEDEQA/AOkAAzdoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANLbO0IW9CdZri4UlGP0pNqMY+1oImcjZbMK1NtxTy4tJ+lrOPTgyH582tvbfu6Uo1ZJUqjlCSflVM+NVemHnVLTHDhY1eezbnbyUL+37RYjUhiNaC6S6SX6r1x610LTXHn4eeLzk9p0AFXpAAAAAAAAAAAAAAAAAAAAAAAAU2/38pW1apb1aam4VJpTi3HEc5ipJ83wtcvvPEfCXsXrGqvVF+9plJ8JFLhv67+k6Ul66NPP35KJUwX8YlzLct62mIn27bX8J2yEvFp1paZWVGMfXLieOnPvXQqm8nhAt7yEaTi6UVUU3ipq8JqOZRi8R1eVo1o+jT5vKMeZ9jImKq25b2jJlJ1pWtFuCoR0w8zxn1qXEn58Y+cvOWncuw3jVV1bW2rRlDxascdnBx08XiqOK4uTx6dMaSrNhcPFOeMyt5wmlzbimnhehR7/AJq6yWLftrwq7TUKdGzlKC4P/JUnCPHl/NgnmKwuuNX3Eyzh2CyncSpRnUpyoyek4SWGpdfSu5mYp25e9tH5FF3V521WrdqjFT4fFco8UI6JeLhN8T+ljoXFmculwcnnX57AAQ3AAAAAAAAAAAAAAAAAAAAAHGvCpD+vT89OjL93h/hKpu9u9dXtVwg1CMEpVqkvJgnnGnWTw8LK5N5STZbvCXWjK+qpY8SNKnL09mp/xli8H2y+HZ8JR51Kk69TGcyam4xSeVjSnDHc897NIn4cnk/ef6hqG4+7cVwyVes88Lm6nAlLlh4ilF+Z56cyuby7j9jSd1azlWpRjx1IT/tIR6zTSXFFddE1zxjUs+2vCBRt7ujSVvcUY0XVjcUpRgpTUliHBwyaeHl5zqW2whGrH5R2dS341l0Z8GeTy5JZxlfN6a97QUcAtq8oSUueOazjPr7+WH0aT6E5sWjYxuoVKiozpSUnFVcwouWM8Mnh8KeuOeNVziRe27SFG6r0Y+TTr1oR+qptRXswfLO4hh0pZw+TzjD6c9Off1zqlKTLDqN/4Q9iUs2VtZ21amsqWVGNu+cnwqMXxLLer8/N6F/2TtWjUtLSpUjG2qXEWqdLtOPOOJqKk/KfCk8efHQ4VuXsqzqXbhcQqVVFRlGNOThJ5ml2i1TxHr1WGsZ0L5tbwk0Lb+o7MpUouknHjkn2aa5xhFay65lJ9OWMtZzHpel5rOukgit0Ku1quz6Fe5fbVq8pzk4KGIQk5OEXw4WElHveXglpQkuawVdHj5YvD4AA1AAAAAAAAAAAAAAAAADT2zd9jbVq36OjUmvSotr78BEzka4hvPd9pXrT+nXrSX1eNxh+6olp8He0repauhJOdS2nKdKKm4Nxk21LK6KUpJ88ad6KLtJYwu5JexYIulc1qc1UhKUJxeYyi8Nfz3GuOPu/Lr+09ztiXEpV6s5t1I4g8z46UIQTXZ4b4pZ1lJ8WW3yJG6v7W3o1LispYox8uUpZnPyZRjCT8VyksLV8/Mc4o+EnbUY8Lp21VrOJShNPLWG3wzSy1zxgr23t4NqXslKvPiUdYQiuGEfOorr53l+cYI67uKlWpOrLyqlSdSX1pScn97MJ9YSJG9SrU6kVTqY0xwy7umueWmFnk8LONJRmN0rCyp3adxGlUglLgVSfBSlU0cIzk9I5WcJ6PTmsMrWTbtrycFjSS1WH3N5aXmz0eVnXGRg6Pvv4Q7urW+SW1R06EIRg5W71nNrlGUfmx0S4fPz5Fz3NW2FsyklF8VOtUlXqXk5U+Om3OTnB4lJYzBePFLxWcTs6lvxxq05dlOE41Ip+TxRalH70uT16RXWf3o3n2jdUoUHGrThCTqVUqjnxN6wjLhjHEIrkpLPsKzVMWmJ2Hc7erSqR4oThUS0lwTjPD6ao9M5l4PdsbJtrOrcVKlSq+ymq9KTgqfi5xTjF445STWM58p41ZJbqb/XV3OdF22W45oxpx0o81mpJyS4NY5emO7upj1U/K9WXsGrLaFlCcaFavb0q0oRnwdppr55Jc2njKWcG3GLceJarLWfPnHvIeqvLS3UvgADQAAAAAAAAAAArfhCruNhNLnOdCn6nUi5fuxkWQrm/Oy7+5t4wox43Cqqk0mstKMo4SfPWWfUIZc05SXE9qyepDNlm2xsTbSbXyW59VGr7+EhpbH2oudtcr00an5TXYcqIaJ8cWbi2df5wqFf9lP4GeGxNrvlbXP7KoveidhKLcTLa2dxVmqdOEqk5ZxGKy31f/wBJL+j22/8AK3H7OXwNzZ2y9v0eNKzqzjVp9jVjKFRKUOOFTGYOMk+KnB6Pp3NkbArcoSTaaaabTTWGmtGmnyZ8kyxbU2XvFcVp16lrW46suKXDTklySSS10SS566atmt/Rnbj0+SXD/wBuXwGwNO52fd0I051ISgq0XOk386Omvm5rn3rvPNK+qxwlJ6PRc0n6HpksO07TeSuuCpZVoKVbt6rjRquU6nDw8XjNqOnSOF7FjUew9vLSnZ3UVyy6FVt+nxcP1p83yzhNGg9oxk12sFJrk9Yvu66456LCJDZW04UZ8dGrKk2uGSlqprKfC48uHKT1lpjzJvbtt3d6mtKFfvw6FSLz35dOOvrJG23O3nqPErWaWfn8HCv9M669HIbAhr2vd1qsriUoTcnF1HBqHirCSbXip4Xe+/XmXHeDfS1q2tOytoygoSpt0pRfi04ryakp6N5aefGy36n6s/BttXiUpfJafn4mpJ45pRpyX7y95MQ8Gza4ZXUIrOXwUMS5tvE+NY1fRe95ibVMQ+7O8d/GtRTr8VLtadO5g9VCLeHKKescJNvGmE3hOM1DrV/c7LoYVWpGMpZ4IZcqk8dIU45lN+ZJlV2JuHsO2eYqrWlprJro01jgSktUuvQsdhY2lDPZUqNvxaz4Ixi5P9bhWW/SUtMT00i149yxSqXdXPZUXRj0qV20+Wko0Yvifom6bM1va1IxUHOVaWuZNRTfXlFJJL+WzPOrTXVv7l6/5RqzvZ5xDv8Am/i/b17iurV5LxO6yA91O/vWX6ep4JdGtvKIkAAWAAANJ7RnTvKNHxHGtGaw88acYykpR6Y8VJ/WRukDt7ZNGvcW86vCqNPtO1blwcOYtxfEmmvHjDVPvInpjz74Ti0KNXVxx69PvRlhUvPo0/ty/IVynsnZr8i8ukunBeTa++TPU9k0l/j75f8AIi/fEpDnysfa3X0Yfbl+Q8dtdfqL1yl+CKpWsbWPlbRvfXcxXuiiKuv6Nx1q39xPvU76pj2RmiR0B1Lj6Ufsv8xjlXrfTh9l/nObq78HvzqlKf1ripP3zZjqbS8GC5wtJf6HP8GTiHR5XjXOpTXq/wDc9U7qT5VKb9Cz/Gcwe8XgvXKjbP8A4rf/AFnl7xeDF/3Nqv8AiyX/AFjEusxqVu+L9TX4hut+p7WvwOYUNs+D1+TUpU/NGpXpL2JxRu29bc6bxC9nBv6G0a8X7HWJQ6C4VP1V6Mv4Hl0l1y/RhfEiNhzs4RcadapcJy4s1K8qrWmMKTbaWnIlOOGMtL1t/iyAcaXd7W/wPEp0l9FerPvyYLnamzKes61vT6vjqQXvZGz303bjp8roy+pma9sE0EpdzqS0Sk159F9/wCoS6tL0fz8Ct3XhA2NHSmqtZ+aPDH2zw/YmalLfSdTp2K/Vj2kvVKWIr7LJxaK2npblbU+bzLHVmF16L0i+L6mq+15PqyRNte2NXWXa1Hp/aZks96h5KfoSJeE4vkMein4+9y9JvCXLGdOfPzgAl6q1isZAAAsAAAAAMVW2t5eVCEvTFP3mrPYuyXztrd+mlB/gb4CMhHrYWx/8tbfsqfwPcdj7LXK3oL0U4fA3QDIaq2bYfoaX2I/A+PZmz/0NL7EfgbYBkNJ7H2Y/7ij9iPwPL2Jsr9BR+xH4G+AZCNlu/sZ87ag/9EfgYam6m70udpbv/bj8CYAR4x9K9U3G3WfOzo+pNe5mN7g7q/5Sn7Z/mLKBqPCv0rcdwt1V/hKX73xNinuhu9HlbU19r4k4AeFfpGU939kR5UKa9Rsw2dZR5U4L1G0AtkPEaNJcopeo94AAAAJAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAf/9k="
+                         class="card-img-top rounded-2" style="height: 300px; width: 250px">
+                    <p>Converse Chuck 70</p>
+                    <p class="description">Una versión moderna de las Chuck Taylor, las Converse Chuck 70 destacan por su calidad premium.</p>
+                    <p class="price">$75.00</p>
+                    <button class="add-to-cart-btn">Agregar al carrito</button>
+                </div>
+
+                <div class="product" data-id="16">
+                    <img src="https://www.converse.com/dw/image/v2/BJJF_PRD/on/demandware.static/-/Sites-cnv-master-catalog-we/default/dw207bf2ff/images/a_08/171327C_A_08X1.jpg?sw=406"
+                         class="card-img-top rounded-2" style="height: 300px; width: 250px">
+                    <p>Converse One Star</p>
+                    <p class="description">Un clásico reinventado, las Converse One Star ofrecen un estilo único y moderno.</p>
+                    <p class="price">$60.00</p>
+                    <button class="add-to-cart-btn">Agregar al carrito</button>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Recommended -->
+
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-light text-muted">
+    <!-- Section: Social media -->
+    <section class="p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+        <div class="container">
+            <div class="row d-flex">
+                <!-- Left -->
+                <div class="col-md-6 col-sm-12 mb-2 mb-md-0 d-flex justify-content-center justify-content-md-start">
+                    <div class="">
+                        <div class="input-group" style="max-width: 400px;">
+                            <input type="email" class="form-control border" placeholder="Email" aria-label="Email"
+                                   aria-describedby="button-addon2"/>
+                            <button class="btn btn-light border" type="button" id="button-addon2"
+                                    data-mdb-ripple-color="dark">
+                                Suscribete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Left -->
+            </div>
+        </div>
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Links  -->
+    <section class="">
+        <div class="container text-center text-md-start mt-5 mb-4">
+            <!-- Grid row -->
+            <div class="row mt-3">
+                <!-- Grid column -->
+                <div class="col-12 col-lg-3 col-sm-12">
+                    <!-- Content -->
+                    <a href="" target="_blank" class="ms-md-2">
+                        <img src="https://images.vexels.com/media/users/3/204690/isolated/preview/ccb652d1ca11908eeb950eb670c02619-telefono-celular-sonando-icono-azul.png"
+                             height="35"/>
+                    </a>
+                    <p class="mt-3">
+                        © 2023 Copyright: ZapasBoll.com.
+                    </p>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-6 col-sm-4 col-lg-2">
+                    <!-- Links -->
+                    <h6 class="text-uppercase text-dark fw-bold mb-2">
+                        Tienda
+                    </h6>
+                    <ul class="list-unstyled mb-4">
+                        <li><a class="text-muted" href="SobreNosotros.html">Acerca De</a></li>
+                        <li><a class="text-muted" href="Tienda.html">Tienda</a></li>
+                        <li><a class="text-muted" href="Contacto.html">Contacto</a></li>
+                        <li><a class="text-muted" href="Index.html">Inicio</a></li>
+                    </ul>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-12 col-sm-12 col-lg-3">
+                    <!-- Links -->
+                    <h6 class="text-uppercase text-dark fw-bold mb-2">Nuestras aplicaciones</h6>
+                    <a href="#" class="mb-2 d-inline-block"> <img
+                            src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/misc/btn-appstore.webp"
+                            height="38"/></a>
+                    <a href="#" class="mb-2 d-inline-block"> <img
+                            src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/misc/btn-market.webp"
+                            height="38"/></a>
+                </div>
+                <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+        </div>
+    </section>
+
+</footer>
+<!-- Footer -->
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<script src="js/CambiarColor.js"></script>
+<script src="js/EventoTecla.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+<script src="js/comprar.js"></script>
+<script src="js/app.js"></script>
+<!--<script src="js/jqueryFun.js"></script>-->
+</body>
+</html>
